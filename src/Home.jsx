@@ -1,23 +1,30 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Card, Stack } from "react-bootstrap";
+import startBackground from "./images/backgroundImages/startBackground.jpg"
 import Styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 
 export const Home = () => {
 
-
+const navigate = useNavigate();
     return (
-<Container fluid>
-    <Row><Col>Ready for a spooky Halloween adventure?</Col></Row>
-    <Row>  <Button>Click to get started!</Button></Row>
-</Container>
-          
-        //* </div> */}
-        // <Container style={{textAlign: "center", justifyContent: "center", backgroundColor: "green", minHeight: "100vh"}}>
+        <>
+            <Card>
+                <Card.Body style={{ textAlign: "center" }}>
+                    <Card.Text>
+                        Ready for a spooky Halloween adventure?
+                    </Card.Text>
+                    <Button variant="danger" onClick={()=>{
+                        navigate('/start')
+                    }
 
-        //     <Button style={{height: "30vh", marginTop: "40vh", marginBottom: "40vh"}} > Click Here!</Button>
- 
-            
-        // </Container>
+                    }>Click to get started!</Button>
+                </Card.Body>
+            </Card>
+        </>
+
+
+
     )
 }
