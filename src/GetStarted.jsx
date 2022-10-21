@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import { HalloweenContext } from "./HalloweenContext";
 
 export const GetStarted = () => {
+    const navigate = useNavigate();
+    const { placeOptions, setBackgroundImage, setChosenPlace} = useContext(HalloweenContext);
 
     return (
         <>
@@ -13,20 +17,22 @@ export const GetStarted = () => {
                     Where shall we trick-or-treat first?
                 </Card.Body>
             </Card>
-            <Card>
-                <Container>
-                    <Row>
-                        <Card>A</Card>
-                    </Row>
-                    <Row>
-                    <Card>A</Card>
-                        
-                    </Row>
-                    <Row>
-                    <Card>c</Card>
-                    </Row>
-                </Container>
-            </Card>
+            {/* <Card> */}
+            <Container>
+                {
+                    placeOptions.map(place => {
+                        return (
+                            <Row>
+                                <Card onClick={()=>{
+                                    setBackgroundImage(place.backgroundImage);
+                                    setChosenPlace(place);
+                                    navigate('/walking');
+                                }}>{place.name}</Card>
+                            </Row>
+                        )
+                    })
+                }
+            </Container>
         </>
 
     )
