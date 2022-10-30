@@ -12,20 +12,19 @@ export const GetStarted = () => {
             <Card>
                 <Card.Body>
                     {firstTrickOrTreat ? "It\'s Halloween! What an exciting time! You and a parent or other trusted adult are heading out for a fun night of trick-or-treating! You live in a small neighborhood, and only have a few places to go. Where shall we trick-or-treat first?" : "Where should we go next?"}
-
                 </Card.Body>
             </Card>
             <Container>
-                {
+                { 
                         placeOptions.filter(place => place.visited === false).map(place => {
                             return (
                                 <Row>
-                                    <Button onClick={() => {
+                                    <Button variant='danger' onClick={() => {
                                         setBackgroundImage(place.backgroundImage);
                                         setChosenPlace(place);
                                         place.visited = true;
                                         setFirstTrickOrTreat(false);
-                                        console.log(place);
+                                        // console.log(place);
                                         navigate('/walking');
                                     }}>{place.name}</Button>
                                 </Row>

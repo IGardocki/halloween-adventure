@@ -5,7 +5,7 @@ import { Card, Button } from "react-bootstrap";
 
 export const TrickOrTreating = () => {
     const navigate = useNavigate();
-    const { chosenPlace } = useContext(HalloweenContext);
+    const { chosenPlace, placeOptions } = useContext(HalloweenContext);
 
     return (
         <>
@@ -14,8 +14,9 @@ export const TrickOrTreating = () => {
                 <Card.Body>
                     {chosenPlace.message}
                 </Card.Body>
-                <Button onClick={() => {
-                    navigate('/start');
+                <Button variant="danger" onClick={() => {
+                    placeOptions.filter(place => place.visited === false).length === 0 ?
+                    navigate('/end') : navigate('/start')
                 }}>Next</Button>
             </Card>
         </>

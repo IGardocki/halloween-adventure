@@ -5,22 +5,24 @@ import React, { useState } from 'react';
 import { HalloweenContext } from './HalloweenContext';
 import { Home } from './Home.jsx'
 import { GetStarted } from './GetStarted.jsx'
-
-// import Styled from 'styled-components'
+import { End } from './End';
 import { TrickOrTreating } from './TrickOrTreating';
 import { Container } from 'react-bootstrap';
 
 // imports starting halloween background
 import startBackground from "./images/backgroundImages/startBackground.jpg";
 
-// imports the cave background image
-import caveBackground from "./images/backgroundImages/caveBackground.jpg";
-import mukImage from "./images/monsterImages/mukImage.png"
-
 // imports the haunted house background image
 import hauntedHouseBackground from "./images/backgroundImages/hauntedHouseBackground.jpg";
 // imports the haunted house skeleton image
 import skeletonImage from "./images/monsterImages/skeletonImage.png";
+
+// imports the cave background image
+import caveBackground from "./images/backgroundImages/caveBackground.jpg";
+// imports the muk picture
+import mukImage from "./images/monsterImages/mukImage.png"
+
+import graveyardBackground from "./images/backgroundImages/graveyardBackground.jpg";
 
 
 import {Walking} from './Walking.jsx';
@@ -54,6 +56,14 @@ function App() {
       monsterImage: mukImage,
       message: '"MMuuuuuukkkk", says Muk happily. He seems overjoyed that you have come to visit him in his cave! He gives you a HUGE handful of candy.',
       visited: false
+    }, 
+    {
+      name: 'Scary Graveyard',
+      backgroundImage: graveyardBackground,
+      walkingMessage: 'You walk towards the cave near your house, and it looks very creepy. "Don\'t worry!", says your parent or other trusted adult. "Muk keeps to himself because he\'s poisonious, but he\'s kind (from a distance). By the way, do you have that new-fangled PokemonGo app installed on that fancy phone of yours?"',
+      monsterImage: mukImage,
+      message: '"MMuuuuuukkkk", says Muk happily. He seems overjoyed that you have come to visit him in his cave! He gives you a HUGE handful of candy.',
+      visited: false
     }
     // Scary Graveyard', 'Creepy Cave'
   ])
@@ -82,6 +92,7 @@ function App() {
             {/* <Route path='/placeoptions' element={<PlaceOptions />} /> */}
             <Route path='/walking' element={<Walking/>}/>
             <Route path='/trickortreat!' element={<TrickOrTreating />} />
+            <Route path='/end' element={<End />} />
           </Routes>
 
         </Router>

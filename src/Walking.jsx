@@ -15,14 +15,10 @@ export const Walking = () => {
                 <Card.Body>
                     {chosenPlace.walkingMessage}
                 </Card.Body>
-                <Button onClick={()=>{
-                                   
-                                   navigate('/trickortreat!');
-                               }}>Next</Button>
+                <Button variant="danger" onClick={() => {
+                    navigate('/trickortreat!');
+                }}>Next</Button>
             </Card>
-           
-
         </Container>
-
     )
 }
