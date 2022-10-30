@@ -23,6 +23,7 @@ import caveBackground from "./images/backgroundImages/caveBackground.jpg";
 import mukImage from "./images/monsterImages/mukImage.png"
 
 import graveyardBackground from "./images/backgroundImages/graveyardBackground.jpg";
+import ghostImage from "./images/monsterImages/ghostImage.png";
 
 
 import {Walking} from './Walking.jsx';
@@ -60,12 +61,11 @@ function App() {
     {
       name: 'Scary Graveyard',
       backgroundImage: graveyardBackground,
-      walkingMessage: 'You walk towards the cave near your house, and it looks very creepy. "Don\'t worry!", says your parent or other trusted adult. "Muk keeps to himself because he\'s poisonious, but he\'s kind (from a distance). By the way, do you have that new-fangled PokemonGo app installed on that fancy phone of yours?"',
-      monsterImage: mukImage,
-      message: '"MMuuuuuukkkk", says Muk happily. He seems overjoyed that you have come to visit him in his cave! He gives you a HUGE handful of candy.',
+      walkingMessage: 'You walk towards the graveyard near your house. "I\'ve heard there are some ghosts around this area", says your parent or other trusted adult. "But don\'t worry! We ain\'t afraid of no ghosts!"',
+      monsterImage: ghostImage,
+      message: '"Hello!", says the ghost. "We don\'t have many visitors around this area.I bought an entire bag of candy hoping for trick-or-treaters, but nobody else has shown up. You can just take all of it!"',
       visited: false
     }
-    // Scary Graveyard', 'Creepy Cave'
   ])
 
   // sets place that user chooses to trick or treat at
